@@ -1,0 +1,11 @@
+excluded: # paths to ignore during linting. Takes precedence over `included`.
+  - Carthage
+  - Pods
+  - R.generated.swift
+  - baseproject/DummyProject/Helpers
+  - baseproject/R.generated.swift
+  - baseproject/DummyProject/R Generated Swift/R.generated.swift
+  - DummyProject/Helpers
+
+disabled_rules:
+  - trailing_whitespace
