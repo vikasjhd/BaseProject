@@ -143,12 +143,13 @@ public class MediaPicker : NSObject {
                 myPickerController.delegate = self
                 myPickerController.sourceType = .camera
                 myPickerController.showsCameraControls = true
-                var types = [kUTTypeMovie,kUTTypeImage] as [String]
+               
+                var types = [UTType.video.identifier, UTType.image.identifier] as [String]
                 if fileSelectionType == .ImageOnly {
-                    types = [kUTTypeImage] as [String]
+                    types = [UTType.image.identifier] as [String]
                 }
                 if fileSelectionType == .VideoOnly {
-                    types = [kUTTypeVideo] as [String]
+                    types = [UTType.video.identifier] as [String]
                 }
                 myPickerController.mediaTypes = types
                
@@ -172,13 +173,13 @@ public class MediaPicker : NSObject {
                 let myPickerController = UIImagePickerController()
                 myPickerController.delegate = self
                 myPickerController.sourceType = .photoLibrary
-                myPickerController.mediaTypes = [kUTTypeMovie,kUTTypeImage] as [String]
-                var types = [kUTTypeMovie,kUTTypeImage] as [String]
+                myPickerController.mediaTypes = [UTType.video.identifier, UTType.image.identifier] as [String]
+                var types = [UTType.video.identifier, UTType.image.identifier] as [String]
                 if fileSelectionType == .ImageOnly {
-                    types = [kUTTypeImage] as [String]
+                    types = [UTType.image.identifier] as [String]
                 }
                 if fileSelectionType == .VideoOnly {
-                    types = [kUTTypeVideo] as [String]
+                    types = [UTType.video.identifier] as [String]
                 }
                 myPickerController.mediaTypes = types
                 self.currentVC?.present(myPickerController, animated: true, completion: nil)

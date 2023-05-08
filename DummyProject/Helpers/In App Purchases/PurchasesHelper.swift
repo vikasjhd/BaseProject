@@ -54,7 +54,7 @@ class PurchaseHelper: NSObject {
             SKPaymentQueue.default().add(self)
             SKPaymentQueue.default().add(payment)
             log("PRODUCT TO PURCHASE: \(product.productIdentifier)")
-            self.currencyCode = product.priceLocale.currencyCode
+            self.currencyCode = product.priceLocale.currency?.identifier
             self.price = product.price
             productID = product.productIdentifier
             
